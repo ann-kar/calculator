@@ -1,0 +1,31 @@
+{
+  "name": "exercise-7-nasa-calculator-kosmiczne-rachunki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pl-incode/exercise-7-nasa-calculator-kosmiczne-rachunki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pl-incode/exercise-7-nasa-calculator-kosmiczne-rachunki/issues"
+  },
+  "homepage": "https://github.com/pl-incode/exercise-7-nasa-calculator-kosmiczne-rachunki#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
