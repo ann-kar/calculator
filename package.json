@@ -1,5 +1,8 @@
 {
   "name": "exercise-7-nasa-calculator-kosmiczne-rachunki",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
