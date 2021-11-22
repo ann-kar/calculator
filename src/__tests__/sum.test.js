@@ -22,4 +22,4 @@ test('add 0.5 + 2 to equal 2.5', () => {
 
 test('add 0.5 + 0.5 to equal 1', () => {
   expect(actions.sum(0.5, 0.5)).toBe(1);
-})
+});
