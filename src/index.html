@@ -14,8 +14,8 @@
     <table class="calc">
       <caption class="caption">NASA Calculator</caption>
       <tr>
-        <td colspan="3"><input class="result" type="text" id="result" disabled /></td>
-        <td><input class="button button-oper-clear" type="button" value="C" /></td>
+        <td colspan="3"><input class="result" data-result="res" type="text" id="result" disabled /></td>
+        <td><input class="button button-oper-clear" data-clear="clear" type="button" value="C" /></td>
       </tr>
       <tr>
         <td><input class="button button-digit-1" type="button" value="1" /></td>
@@ -43,7 +43,7 @@
       </tr>
     </table>
   </div>
-  <script src="index.js"></script>
+  <script src="./index.js"></script>
   <script src="../node_modules/jquery/dist/jquery.js"></script>
 </body>
 
