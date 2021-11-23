@@ -1,23 +1,32 @@
 // const actions = require('./actions');
 
-const calculator = {
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const calculator = {
   displayValue: "0",
   firstActionOperand: null,
+  waitingForSecondOperand: false,
+  operator: null
   
 }
-
 
 function updateDisplay() {
   const displayResult = document.querySelector('[data-result]')
   displayResult.value = calculator.displayValue
-}
-
-updateDisplay()
+};
 
 function clear() {
   const displayResult = document.querySelector('[data-result]')
   displayResult.value = calculator.displayValue = ""
-}
+};
 
-clear()
+const buttonClear = document.querySelector('[data-clear]')
+
+buttonClear.addEventListener('click', (e) =>{
+  clear()
+});
+
+
+});
 
