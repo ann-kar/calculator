@@ -12,5 +12,6 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
+    "linebreak-style": ["error", (process.platform === "win32" ? "windows" : "unix")]
   },
 };
