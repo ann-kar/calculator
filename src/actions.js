@@ -28,4 +28,4 @@ const actions = {
   div,
 };
 
-module.exports = actions;
+export default actions;
