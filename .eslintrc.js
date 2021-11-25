@@ -12,5 +12,8 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
+    "no-console": "off",
+    "no-restricted-globals": "off", 
+    "max-len": "off"
   },
 };
