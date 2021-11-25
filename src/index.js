@@ -48,6 +48,11 @@ function inputDigit(digit) {
 }
 
 function inputDecimal(dot){
+  if (calculator.waitingForSecondValue === true) {
+    calculator.screen = '0.'
+    calculator.waitingForSecondValue = false
+    return
+  }
   if (!calculator.screen.includes('.')) {
     calculator.screen += dot 
   }
@@ -55,11 +60,50 @@ function inputDecimal(dot){
 
 function handleOperator(clickOperator) {
   const inputValue = parseFloat(calculator.screen)
+  if (calculator.operator && calculator.waitingForSecondValue) {
+    calculator.operator = clickOperator
+    console.log(calculator)
+    return
+  }
+
+
   if (calculator.firstValue === null && !isNaN(inputValue)) {
     calculator.firstValue = inputValue
-  } 
+  } else if (calculator.operator){
+    if ( calculator.operator === "add") {
+      const result = sum(calculator.firstValue, inputValue)
+      calculator.screen = String(result)
+      calculator.firstValue = result
+    }
+    if ( calculator.operator === "substraction") {
+      const result = sub(calculator.firstValue, inputValue)
+      calculator.screen = String(result)
+      calculator.firstValue = result
+    }
+    if ( calculator.operator === "multi") {
+      const result = multi(calculator.firstValue, inputValue)
+      calculator.screen = String(result)
+      calculator.firstValue = result
+    }
+    if ( calculator.operator === "divide") {
+      const result = div(calculator.firstValue, inputValue)
+      calculator.screen = String(result)
+      calculator.firstValue = result
+    }
+    
+    
+  }
   calculator.waitingForSecondValue = true
   calculator.operator = clickOperator
+  console.log(calculator)
+}
+
+
+function clear() {
+  calculator.screen = "0",
+  calculator.firstValue = null,
+  calculator.waitingForSecondValue = false,
+  calculator.operator = null
   console.log(calculator)
 }
 
@@ -80,104 +124,37 @@ keys.addEventListener('click', (e) => {
   
   const key = e.target
   const action = key.dataset.action
+  const number = key.dataset.number
   if (action) {
-    handleOperator(key.value);
+    handleOperator(key.dataset.action);
     updateScreen();
+    return
   }
   
-  if (!action) {
+  if (number) {
     inputDigit(key.value);
     updateScreen();
+    return
   }
 
-  if (key.dataset.action === 'decimal') {
+  if (key.dataset.decimal) {
     inputDecimal(key.value)
     updateScreen()
+    return
   }
 
-  if (key.dataset.action==='clear') {
-    console.log('clear')
+  if (key.dataset.clear) {
+    clear()
+    updateScreen()
+    return
+  }
+
+  if (key.dataset.equals) {
+    handleOperator(key.dataset.action)
+    updateScreen()
+    return
   }
 })
-
-// const calculator = document.querySelector('.calc-cnt')
-// const keys = calculator.querySelector('tbody')
-// const display = document.querySelector('.result')
-
-// function clear() {
-//   display.value = ""
-//   delete calculator.dataset.previousKeyType
-// };
-
-// keys.addEventListener('click', (e) => {
-//   if (e.target.matches('input[type="button"]')) {
-//     const key = e.target
-//     const action = key.dataset.action
-//     const keyContent = key.value
-//     const displayNum = display.value
-//     const previousKeyType = calculator.dataset.previousKeyType
-
-//     if (!action) {
-//       if (displayNum === "" || previousKeyType === 'operator') {
-//           display.value = keyContent
-//       } else {
-//         display.value = displayNum + keyContent
-//       }
-//       calculator.dataset.previousKeyType = 'number'
-//     } 
-
-//     if (action === 'add' || action === "divide" || action === "multi" || action === "substraction") {
-//       calculator.dataset.previousKeyType = 'operator'
-//       calculator.dataset.firstValue = displayNum
-//       calculator.dataset.operator = action
-      
-//     }
-    
-//     if (action === "decimal") {
-//       if (!displayNum.includes(".")){
-//         display.value = displayNum + "."
-//       } else if (previousKeyType === 'operator'){
-//         display.value = "0."
-
-//       }
-//       calculator.dataset.previousKeyType = 'decimal'
-      
-//     }
-
-//     if (action === "clear") {
-//       clear()
-//       calculator.dataset.previousKeyType = 'clear'
-//     }
-
-//     if (action === "equals") {
-//       const secondValue = parseFloat(displayNum)
-//       const firstValue = parseFloat(calculator.dataset.firstValue)
-//       const operator = calculator.dataset.operator
-      
-
-//       if (operator === "add") {
-//         display.value = sum(firstValue, secondValue)
-//       }
-
-//       if (operator === "multi") {
-//         display.value = multi(firstValue, secondValue)
-//       }
-      
-//       if (operator === "divide") {
-//         display.value = div(firstValue, secondValue)
-//       }
-
-//       if (operator === "substraction") {
-//         display.value = sub(firstValue, secondValue)
-//       }
-            
-//     }
-
-//     calculator.dataset.previousKeyType = 'equals'
-
-//   }
-
-// });
 
 
 });
