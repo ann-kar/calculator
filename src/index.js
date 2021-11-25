@@ -1,1 +1,1 @@
-// const actions = require('./actions');
+// import actions from './actions';
