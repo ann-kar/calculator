@@ -1,4 +1,4 @@
-const actions = require('../actions');
+import actions from '../actions';
 
 test('divide 6 / 0 throws error: You cannot divide by zero', () => {
   function divByZero() {
