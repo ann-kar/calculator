@@ -1,4 +1,5 @@
-// const actions = require('./actions');
+// import actions from './actions';
+
 document.addEventListener('DOMContentLoaded', () => {
   function sum(a, b) {
     return a + b;
@@ -146,3 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
