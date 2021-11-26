@@ -14,36 +14,37 @@
     <table class="calc">
       <caption class="caption">NASA Calculator</caption>
       <tr>
-        <td colspan="3"><input class="result" type="text" id="result" disabled /></td>
-        <td><input class="button button-oper-clear" type="button" value="C" /></td>
+        <td colspan="3"><input class="result" data-action="result" type="text" id="result" value="" disabled /></td>
+        <td><input class="button button-oper-clear" data-clear="clear" type="button" value="C" /></td>
       </tr>
       <tr>
-        <td><input class="button button-digit-1" type="button" value="1" /></td>
-        <td><input class="button button-digit-2" type="button" value="2" /></td>
-        <td><input class="button button-digit-3" type="button" value="3" /></td>
-        <td><input class="button button-oper-div" type="button" value="/" /></td>
+        <td><input class="button button-digit-1" data-number="1" type="button" value="1" /></td>
+        <td><input class="button button-digit-2" data-number="2"type="button" value="2" /></td>
+        <td><input class="button button-digit-3" data-number="3"type="button" value="3" /></td>
+        <td><input class="button button-oper-div" data-action="divide" type="button" value="/" /></td>
       </tr>
       <tr>
-        <td><input class="button button-digit-4" type="button" value="4" /></td>
-        <td><input class="button button-digit-5" type="button" value="5" /></td>
-        <td><input class="button button-digit-6" type="button" value="6" /></td>
-        <td><input class="button button-oper-mul" type="button" value="&times;" /></td>
+        <td><input class="button button-digit-4" data-number="4" type="button" value="4" /></td>
+        <td><input class="button button-digit-5" data-number="5" type="button" value="5" /></td>
+        <td><input class="button button-digit-6" data-number="6" type="button" value="6" /></td>
+        <td><input class="button button-oper-mul" data-action="multi" type="button" value="&times;" /></td>
       </tr>
       <tr>
-        <td><input class="button button-digit-7" type="button" value="7" /></td>
-        <td><input class="button button-digit-8" type="button" value="8" /></td>
-        <td><input class="button button-digit-9" type="button" value="9" /></td>
-        <td><input class="button button-oper-sub" type="button" value="&ndash;" /></td>
+        <td><input class="button button-digit-7" data-number="7" type="button" value="7" /></td>
+        <td><input class="button button-digit-8" data-number="8" type="button" value="8" /></td>
+        <td><input class="button button-digit-9" data-number="9" type="button" value="9" /></td>
+        <td><input class="button button-oper-sub" data-action="substraction" type="button" value="&ndash;" /></td>
       </tr>
       <tr>
-        <td><input class="button button-digit-0" type="button" value="0" accesskey="0" /></td>
-        <td><input class="button button-separ-dot" type="button" value="." /></td>
-        <td><input class="button button-oper-equals" type="button" value="=" /></td>
-        <td><input class="button button-oper-add" type="button" value="+" /></td>
+        <td><input class="button button-digit-0" data-number="0" type="button" value="0" accesskey="0" /></td>
+        <td><input class="button button-separ-dot" data-decimal="decimal" type="button" value="." /></td>
+        <td><input class="button button-oper-equals" data-equals="equals" type="button" value="=" /></td>
+        <td><input class="button button-oper-add" data-action="add" type="button" value="+" /></td>
       </tr>
     </table>
   </div>
   <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="./index.js"></script>
   <script src="./main.js"></script>
 </body>
 
