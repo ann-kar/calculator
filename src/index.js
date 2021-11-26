@@ -10,39 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const key = e.target;
-    const { action } = key.dataset;
-    const { number } = key.dataset;
-    const { decimal } = key.dataset;
-    const { clear } = key.dataset;
-    const { equals } = key.dataset;
+    const { action, number, decimal, clear, equals } = key.dataset;
 
     if (action) {
       calcFn.handleOperator(key.dataset.action);
-      calcFn.updateScreen();
-      return;
-    }
-
-    if (number) {
+    } else if (number) {
       calcFn.inputDigit(key.value);
-      calcFn.updateScreen();
-      return;
-    }
-
-    if (decimal) {
+    } else if (decimal) {
       calcFn.inputDecimal(key.value);
-      calcFn.updateScreen();
-      return;
-    }
-
-    if (clear) {
+    } else if (clear) {
       calcFn.clear();
-      calcFn.updateScreen();
-      return;
-    }
-
-    if (equals) {
+    } else if (equals) {
       calcFn.handleOperator(equals);
-      calcFn.updateScreen();
     }
+    
+    calcFn.updateScreen();
   });
 });
