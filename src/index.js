@@ -3,6 +3,7 @@ import calcFn from './calculator';
 document.addEventListener('DOMContentLoaded', () => {
   const calc = document.querySelector('.calc-cnt');
   const keys = calc.querySelector('tbody');
+  calcFn.updateScreen()
 
   keys.addEventListener('click', (e) => {
     if (!e.target.matches('input[type="button"]')) {
