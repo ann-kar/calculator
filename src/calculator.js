@@ -46,10 +46,10 @@ function handleOperator(clickOperator) {
       case 'add':
         result = actions.sum(calculator.firstValue, inputValue);
         break;
-      case 'substraction':
+      case 'subtract':
         result = actions.sub(calculator.firstValue, inputValue);
         break;
-      case 'multi':
+      case 'multiply':
         result = actions.multi(calculator.firstValue, inputValue);
         break;
       case 'divide':
