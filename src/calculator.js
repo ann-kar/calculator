@@ -25,6 +25,7 @@ function inputDecimal(dot) {
     calculator.waitingForSecondValue = false;
     return;
   }
+
   if (!calculator.screen.includes('.')) {
     calculator.screen += dot;
   }
@@ -70,7 +71,7 @@ function clear() {
   calculator.firstValue = null;
   calculator.waitingForSecondValue = false;
   calculator.operator = null;
-  console.log(calculator);
+  // console.log(calculator);
 }
 
 function updateScreen() {
@@ -78,9 +79,10 @@ function updateScreen() {
   display.value = calculator.screen;
 }
 
-updateScreen();
+// updateScreen();
 
 const calcFn = {
+  calculator,
   inputDigit,
   inputDecimal,
   handleOperator,

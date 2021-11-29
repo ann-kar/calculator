@@ -1,4 +1,4 @@
-const actions = require('../actions');
+import actions from '../actions';
 
 test('add 1 + 1 to equal 2', () => {
   expect(actions.sum(1, 1)).toBe(2);

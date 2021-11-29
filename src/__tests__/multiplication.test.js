@@ -1,4 +1,4 @@
-const actions = require('../actions');
+import actions from '../actions';
 
 test('multiplicate 1 * 1 to equal 1', () => {
   expect(actions.multi(1, 1)).toBe(1);
