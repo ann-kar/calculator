@@ -16,7 +16,7 @@ function inputDigit(digit) {
   } else {
     calculator.screen += digit;
   }
-  console.log(calculator);
+ console.log(calculator);
 }
 
 function inputDecimal(dot) {
@@ -34,7 +34,7 @@ function handleOperator(clickOperator) {
   const inputValue = parseFloat(calculator.screen);
   if (calculator.operator && calculator.waitingForSecondValue) {
     calculator.operator = clickOperator;
-    console.log(calculator);
+   console.log(calculator);
     return;
   }
 
@@ -62,7 +62,7 @@ function handleOperator(clickOperator) {
   }
   calculator.waitingForSecondValue = true;
   calculator.operator = clickOperator;
-  console.log(calculator);
+ // console.log(calculator);
 }
 
 function clear() {
@@ -70,7 +70,7 @@ function clear() {
   calculator.firstValue = null;
   calculator.waitingForSecondValue = false;
   calculator.operator = null;
-  console.log(calculator);
+ // console.log(calculator);
 }
 
 function updateScreen() {
@@ -78,14 +78,13 @@ function updateScreen() {
   display.value = calculator.screen;
 }
 
-updateScreen();
-
 const calcFn = {
+  calculator,
   inputDigit,
   inputDecimal,
   handleOperator,
   clear,
-  updateScreen,
+  updateScreen
 };
 
 export default calcFn;
