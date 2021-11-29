@@ -16,7 +16,6 @@ function inputDigit(digit) {
   } else {
     calculator.screen += digit;
   }
-  console.log(calculator);
 }
 
 function inputDecimal(dot) {
@@ -47,10 +46,10 @@ function handleOperator(clickOperator) {
       case 'add':
         result = actions.sum(calculator.firstValue, inputValue);
         break;
-      case 'substraction':
+      case 'subtract':
         result = actions.sub(calculator.firstValue, inputValue);
         break;
-      case 'multi':
+      case 'multiply':
         result = actions.multi(calculator.firstValue, inputValue);
         break;
       case 'divide':
@@ -63,7 +62,6 @@ function handleOperator(clickOperator) {
   }
   calculator.waitingForSecondValue = true;
   calculator.operator = clickOperator;
-  console.log(calculator);
 }
 
 function clear() {
@@ -71,15 +69,12 @@ function clear() {
   calculator.firstValue = null;
   calculator.waitingForSecondValue = false;
   calculator.operator = null;
-  // console.log(calculator);
 }
 
 function updateScreen() {
   const display = document.querySelector('.result');
   display.value = calculator.screen;
 }
-
-// updateScreen();
 
 const calcFn = {
   calculator,

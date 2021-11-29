@@ -1,6 +1,8 @@
 import calcFn from './calculator';
 
 document.addEventListener('DOMContentLoaded', () => {
+  calcFn.updateScreen();
+
   const calc = document.querySelector('.calc-cnt');
   const keys = calc.querySelector('tbody');
   calcFn.updateScreen();
