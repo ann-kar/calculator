@@ -25,9 +25,11 @@ function inputDecimal(dot) {
     calculator.waitingForSecondValue = false;
     return;
   }
+  
   if (!calculator.screen.includes('.')) {
     calculator.screen += dot;
   }
+
 }
 
 function handleOperator(clickOperator) {
