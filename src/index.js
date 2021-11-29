@@ -1,9 +1,8 @@
 import calcFn from './calculator';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   calcFn.updateScreen();
-  
+
   const calc = document.querySelector('.calc-cnt');
   const keys = calc.querySelector('tbody');
 
@@ -11,9 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!e.target.matches('input[type="button"]')) {
       return;
     }
-    
+
     const key = e.target;
-    const { action, number, decimal, clear, equals } = key.dataset;
+    const {
+      action, number, decimal, clear, equals,
+    } = key.dataset;
 
     if (action) {
       calcFn.handleOperator(key.dataset.action);
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (equals) {
       calcFn.handleOperator(equals);
     }
-    
+
     calcFn.updateScreen();
   });
 });
