@@ -14,7 +14,6 @@ describe('inputDecimal testing', () => {
   test("updates claclulator.screen with '0.' if decimal clicked after clicking operator", () => {
     const calculator = calcFn.calculator
     calculator.waitingForSecondValue = true
-    calculator.operator != null
     calcFn.inputDecimal('.')
     expect(calculator.screen).toEqual('0.')
   })
